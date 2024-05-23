@@ -99,7 +99,7 @@ jobs:
             repo,
             per_page: 1
           })
-          const { data: sarif } = await github.request(`GET ${analyses[0].sarif_url}`, {
+          const { data: sarif } = await github.request(analyses[0].sarif_url, {
             headers: {
               Accept: 'application/sarif+json',
               Authorization: `token ${process.env.GITHUB_TOKEN}`
