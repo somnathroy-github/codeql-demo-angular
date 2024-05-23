@@ -89,10 +89,3 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-        sarif: 'results/javascript.sarif'  # Output SARIF file to this location
-        upload: false
-    - name: Upload SARIF file
-      uses: actions/upload-artifact@v3
-      with:
-        name: codeql-sarif
-        path: ./results/javascript.sarif
