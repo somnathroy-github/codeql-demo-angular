@@ -113,6 +113,7 @@ jobs:
         name: codeql-sarif
         path: ./analysis.sarif
   build:
+    needs: analyze
     runs-on: ubuntu-latest
 
     strategy:
@@ -136,3 +137,8 @@ jobs:
         run: ng build
       - name: Run tests and generate coverage
         run: ng test --browsers=ChromeHeadless --code-coverage --watch=false
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage/
