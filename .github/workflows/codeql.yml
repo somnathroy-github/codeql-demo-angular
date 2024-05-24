@@ -89,29 +89,11 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-    - name: Download SARIF file
-      uses: actions/github-script@v5
-      with:
-        script: |
-          const { owner, repo } = context.repo
-          const { data: analyses } = await github.request('GET /repos/{owner}/{repo}/code-scanning/analyses', {
-            owner,
-            repo,
-            per_page: 1
-          })
-          const { data: sarif } = await github.request(analyses[0].sarif_url, {
-            headers: {
-              Accept: 'application/sarif+json',
-              Authorization: `token ${process.env.GITHUB_TOKEN}`
-            }
-          })
-          require('fs').writeFileSync('analysis.sarif', JSON.stringify(sarif))
-
-    - name: Upload SARIF file
+    - name: Upload SARIF artifact
       uses: actions/upload-artifact@v3
       with:
-        name: codeql-sarif
-        path: ./analysis.sarif
+        name: codeql-results
+        path: /home/runner/work/codeql-demo-angular/results/javascript.sarif
   build:
     needs: analyze
     runs-on: ubuntu-latest
