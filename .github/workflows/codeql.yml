@@ -117,10 +117,11 @@ jobs:
         run: npm link @angular/cli
       - name: Build
         run: ng build
-      - name: Install lcov-summary
-        run: npm install -g lcov-summary
       - name: Run tests and generate coverage
         run: ng test --browsers=ChromeHeadless --code-coverage --watch=false
+      - name: Install lcov
+        run: sudo apt-get install lcov
+      
       - name: Check code coverage
         run: |
           lcov --directory . --capture --output-file coverage.info
