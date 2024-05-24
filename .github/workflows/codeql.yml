@@ -135,8 +135,17 @@ jobs:
         run: npm link @angular/cli
       - name: Build
         run: ng build
+      - name: Install lcov-summary
+        run: npm install -g lcov-summary
       - name: Run tests and generate coverage
         run: ng test --browsers=ChromeHeadless --code-coverage --watch=false
+      - name: Check code coverage
+        run: |
+           COVERAGE=$(lcov-summary coverage/lcov.info | grep 'Lines' | awk '{print $2}' | sed 's/%//')
+           if (( $(echo "$COVERAGE < 50" | bc -l) )); then
+           echo "Code coverage is less than 1%"
+           exit 1
+           fi
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v3
         with:
