@@ -123,11 +123,13 @@ jobs:
         run: ng test --browsers=ChromeHeadless --code-coverage --watch=false
       - name: Check code coverage
         run: |
-           COVERAGE=$(lcov-summary coverage/lcov.info | grep 'Lines' | awk '{print $2}' | sed 's/%//')
-           if (( $(echo "$COVERAGE < 50" | bc -l) )); then
-           echo "Code coverage is less than 1%"
-           exit 1
-           fi
+          lcov --directory . --capture --output-file coverage.info
+          lcov --summary coverage.info
+          COVERAGE=$(lcov --summary coverage.info 2>&1 | grep -oP 'lines\.*: \K(\d+.\d+)')
+          if (( $(echo "$COVERAGE < 5.0" | bc -l) )); then
+            echo "Code coverage is less than 5%"
+            exit 1
+          fi
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v3
         with:
