@@ -25,7 +25,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: 'javascript, typescript'
-        build-mode: none
+        #build-mode: none
         queries: +security-and-quality
 
     - name: Autobuild
