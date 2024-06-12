@@ -35,6 +35,7 @@ jobs:
       uses: github/codeql-action/analyze@v3
 
   Iam-Admin-Build:
+    needs: analyze
     env:
       IGNORE_NORMALISATION_GIT_HEAD_MOVE: '1'
     runs-on: ubuntu-latest
