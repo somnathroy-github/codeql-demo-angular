@@ -1,9 +1,9 @@
 name: Integrated Workflow
 'on':
   push:
-    branches: ['*'] 
+    branches: ['xyz'] 
   pull_request:
-    branches: ['*'] 
+    branches: ['xyz'] 
 jobs:
   analyze:
     name: Analyze Javascript-typescript
