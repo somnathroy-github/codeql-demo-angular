@@ -1,9 +1,9 @@
 name: Integrated Workflow
 'on':
   push:
-    branches: ['*'] 
+    branches: ['xyz'] 
   pull_request:
-    branches: ['*'] 
+    branches: ['xyz'] 
 jobs:
   analyze:
     name: Analyze Javascript-typescript
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check node version
-        run: node --version #check node version
+        run: node --version 
       - name: check npm version
         run: npm --version
       - name: Check Out
