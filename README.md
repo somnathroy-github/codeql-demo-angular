@@ -29,3 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## require at least 1 approvals
 ## check git squash commit 1
 ## check git squash commit 2
+## check git squash commit 3
