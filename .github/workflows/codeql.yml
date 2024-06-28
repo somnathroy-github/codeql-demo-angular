@@ -1,7 +1,7 @@
 name: Integrated Workflow
 'on':
   push:
-    branches: ['xyz'] 
+    branches: ['test'] 
   pull_request:
     branches: ['xyz'] 
 jobs:
