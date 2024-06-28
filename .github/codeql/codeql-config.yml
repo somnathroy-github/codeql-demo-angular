@@ -1,5 +1,6 @@
 name: "CodeQL Configuration"
 
 paths-ignore:
+  - 'Xss.js'
   - '**/Xss.js'
   - '**/Xss.ts'
