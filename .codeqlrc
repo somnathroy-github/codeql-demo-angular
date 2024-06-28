@@ -1,0 +1,6 @@
+paths:
+  ignore:
+    - "**/spec/**"  # Ignore all files under a 'spec' directory
+    - "**/node_modules/**"  # Ignore all files under 'node_modules' directory
+    # Add more patterns as needed
+    - "Xss.js"
