@@ -3,7 +3,7 @@ name: Integrated Workflow
   push:
     branches: ['test'] 
     paths-ignore: 
-      - 'src/**Xss.js'
+      - 'src/Xss.js'
   pull_request:
     branches: ['xyz'] 
 jobs:
@@ -35,24 +35,3 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-
-  Iam-Admin-Build:
-    needs: analyze
-    env:
-      IGNORE_NORMALISATION_GIT_HEAD_MOVE: '1'
-    runs-on: ubuntu-latest
-    steps:
-      - name: check node version
-        run: node --version 
-      - name: check npm version
-        run: npm --version
-      - name: Check Out
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-      - name: Install dependencies
-        run: npm ci --quiet --no-progress
-      - name: Build
-        run: npm run build
