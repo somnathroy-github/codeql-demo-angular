@@ -1,7 +1,7 @@
 name: Integrated Workflow
 'on':
   push:
-    branches: ['test'] 
+    branches: ['test1'] 
     paths-ignore: 
       - 'src/Xss.js'
   pull_request:
