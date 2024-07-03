@@ -35,3 +35,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## change3
 
 ## check rebase and merge 1
+## check rebase and merge change 2
