@@ -10,5 +10,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class MyComponentComponent {
    title:string = '';
-   userInput:string = '';
+   userInput:string = '';//commit1
 }
