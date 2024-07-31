@@ -11,5 +11,6 @@ import { FormsModule } from '@angular/forms';
 export class MyComponentComponent {
    title:string = '';//commit2 to check
    userInput:string = '';//commit1 to check 
+   //random commit to check merge 
 
 }
