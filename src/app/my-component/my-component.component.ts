@@ -9,6 +9,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './my-component.component.css'
 })
 export class MyComponentComponent {
-   title:string = '';
+   title:string = '';//commit2
    userInput:string = '';//commit1
 }
