@@ -3,7 +3,7 @@ name: Integrated Workflow
   push:
     branches: ['xyz'] 
   pull_request:
-    branches: ['main'] 
+    branches: ['xyz'] 
 jobs:
   analyze:
     name: Analyze Javascript-typescript
