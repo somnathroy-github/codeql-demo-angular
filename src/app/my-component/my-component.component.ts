@@ -12,4 +12,6 @@ export class MyComponentComponent {
    title:string = '';
    userInput:string = '';
    // test merge
+   //commit1
+   //change for commit2
 }
