@@ -9,6 +9,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './my-component.component.css'
 })
 export class MyComponentComponent {
-   title:string = '';//commit2
+   title:string = '';//commit2 to check squash and merge
    userInput:string = '';//commit1 to check squash and merge
 }
