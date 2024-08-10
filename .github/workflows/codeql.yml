@@ -35,7 +35,6 @@ jobs:
       uses: github/codeql-action/analyze@v3
 
   Iam-Admin-Build:
-    needs: analyze
     env:
       IGNORE_NORMALISATION_GIT_HEAD_MOVE: '1'
     runs-on: ubuntu-latest
@@ -54,3 +53,5 @@ jobs:
         run: npm ci --quiet --no-progress
       - name: Build
         run: npm run build
+      - name: Test coverage
+        run: npm run test
